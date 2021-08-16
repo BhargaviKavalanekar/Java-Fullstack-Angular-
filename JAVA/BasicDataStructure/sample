@@ -1,0 +1,375 @@
+import java.util.Scanner;
+
+public class ArmstrongNo_Range {
+
+	public static void main(String[] args) {
+		int n, a, b, i, rem, temp, count=0;
+        Scanner sc = new Scanner(System.in);
+		
+        System.out.print("Enter the starting range :  ");
+        a = sc.nextInt();
+        System.out.print("Enter the last number:  ");
+        b = sc.nextInt();
+		
+       
+        for(i=a+1; i<b; i++)
+        {
+            temp = i;
+            n = 0;
+            while(temp != 0)
+            {
+                rem = temp%10;
+                n = n + rem*rem*rem; // 1^3+5^3+3^3
+                temp = temp/10;
+            }
+            if(i == n)
+            {
+                if(count == 0)
+                {
+                    System.out.print("Armstrong Numbers Between the Given Interval are : \n");
+                }
+                System.out.print(i + "  ");
+                count++;
+            }
+        }
+        if(count == 0)
+        {
+            System.out.print("Armstrong Number not Found between the Given Interval.");
+        }
+
+	}
+
+}
+
+import java.util.Scanner;
+
+public class ArmstrongOrNot {
+
+	public static void main(String[] args) {
+		int num;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Number :  ");
+        num = sc.nextInt();
+        
+		int rem=0;
+		int c=0;
+		int d=num;
+		
+		
+		while(num>0) {
+			rem=num%10;
+			c=c+(rem*rem*rem);
+			num=num/10;
+		
+			
+		}
+		
+		if(d==c) {
+		
+		System.out.println("the number is Armstrong");
+		}
+		else {
+			System.out.println("the number is not Armstrong");
+					}
+
+	}
+
+}
+
+import java.util.Scanner;
+
+public class Q4 {
+
+	public static void main(String[] args) {
+		
+		int m1,m2,m3,total;
+		
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the m1 value");
+        m1=s.nextInt();
+        System.out.println("Enter the m2 value");
+        m2=s.nextInt();
+        System.out.println("Enter the m3 value");
+        m3=s.nextInt();
+        total=m1+m2+m3;
+        
+        //condition 1
+        if(m1>60 && m2>60 && m3>60)
+        {
+       	 System.out.println("Passed");
+        }
+        
+        //condition 2
+        if((m1>60 && m2>60) || (m2>60 && m3>60) || (m3>60 && m1>60))
+        {
+       	 System.out.println("Promoted");
+        }
+        
+
+        //condition 3
+        if((m1>60 && m2<60) && m3<60 || (m1<60 && m2>60 && m3<60) || (m1<60 && m2<60 && m3>60) || (m1<60 && m2<60 && m3<60))
+        {
+       	 System.out.println("Failed");
+        }
+
+	}
+
+}
+
+import java.util.Scanner;
+
+public class Q5_IncomeTax {
+
+	public static void main(String[] args) {
+		
+		// Income tax
+		 double CTC,tax_amt;
+         Scanner s=new Scanner(System.in);
+         System.out.println("Enter the income");
+         CTC=s.nextDouble();
+         if(CTC>0 && CTC <180000)
+         {
+         	tax_amt=0;
+         	System.out.println("The tax amount is"+ tax_amt);
+         }
+         else if(CTC>181001 && CTC<=300000)
+         {
+         	tax_amt=0.1*CTC;
+         	System.out.println("The tax amount is"+ tax_amt);
+         }
+         else if(CTC>300001 && CTC<=500000)
+         {
+         	tax_amt=0.2*CTC;
+         	System.out.println("The tax amount is"+ tax_amt);
+         }
+         else if(CTC>500001 && CTC<=1000000)
+         {
+         	tax_amt=0.3*CTC;
+         	System.out.println("The tax amount is"+ tax_amt);
+         }
+         else {
+         	System.out.println("Not valid");
+         }
+
+	}
+
+}
+
+import java.util.Scanner;
+
+public class Q6_Login {
+
+	public static void main(String[] args) {
+		
+		int attempts=0;
+		String username="Bhargavi";
+		String password="bk999";
+		Scanner scan=new Scanner(System.in);
+		
+		while(true) {
+			
+			System.out.println("Enter your username:");
+			String u=scan.next();
+			System.out.println("Enter your Password:");
+			String p=scan.next();
+			
+			if(username.equals(u) && password.equals(p)) {
+				System.out.println("WELCOME...!");
+				break;
+			}
+			else {
+				attempts++;
+				System.out.println("Please enter correct username and password");
+				System.out.println("Number of attempts left:"+(3-attempts));
+			}
+			if(attempts==3) {
+				System.out.println("Please contact your Admin...");
+				break;
+			}
+		}
+            
+	}
+
+}
+
+import java.util.Scanner;
+
+public class Q7 {
+
+	public static void main(String[] args) {
+		
+		 int n,num,i;
+         int a[]=new int[100];
+         Scanner s=new Scanner(System.in);
+         
+         System.out.println("Enter the number of elements you wish to enter :-");
+         n=s.nextInt();
+         
+         System.out.println("Enter "+n+" elements");
+         
+         for(i=0;i<n;i++)
+         {
+        	 a[i]=s.nextInt();
+         }
+         
+         System.out.println("Enter element to be searched");
+         num=s.nextInt();
+         
+         for(i=0;i<n;i++)
+         {
+        	 if(num==a[i])
+             {
+            	 System.out.println(num +" is present at position "  +i);
+            	 break;
+             }	 
+         }
+         if(i==n)
+         {
+        	 System.out.println(num +"is not present in the given list");
+         }
+
+	}
+
+}
+
+
+public class Q8_BubbleSort {
+
+	public class bubblesort {
+		
+		void Sort(int[] a) {
+			
+			int n=a.length;
+			int temp=0;
+			
+			for(int i=0;i<n;i++)
+			{
+				for(int j=1;j<(n-1);j++)
+				{
+					if(a[j-1]>a[j]) // a[0]>a[1]
+					{
+						temp=a[j-1];
+						a[j-1]=a[j];
+						a[j]=temp;
+					}
+				}
+			}
+		}
+
+	public void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[]= {5,12,14,6,78,19,1,23,26,35,37,7,52,86,47}; // array is given in the question
+		
+        System.out.println("Array before Bubble Sort");
+        
+        for(int i=0;i<a.length;i++)
+        {
+       	 System.out.println(a[i]+"");
+        }
+        
+        Sort(a);
+        
+        System.out.println("Array after Bubble Sort");
+        
+        for(int i=0;i<a.length;i++)
+        {
+       	 System.out.println(a[i]+"");
+        }
+
+	}
+	}
+}
+
+
+
+import java.util.Scanner;
+
+public class Q9_StudentMarks {
+
+	    public static void main(String args[])
+	    {
+	    	int i,n;
+		
+			float [] s1=new float[3];
+			float [] s2=new float[3];
+			float [] s3=new float[3];
+			float [] sum=new float[3];
+			float [] avg=new float[3];
+			
+			
+	          for(i=0;i<3;i++)
+	          {
+	        	  Scanner s=new Scanner(System.in);
+	        	  System.out.println("Enter marks of student "+(i+1));
+	        	  s1[i]=s.nextFloat();
+	        	  s2[i]=s.nextFloat();
+	        	  s3[i]=s.nextFloat();  
+	          }
+	          
+	          for(i=0;i<3;i++)
+	          {
+	        	  sum[i]=s1[i]+s2[i]+s3[i];
+	        	 // System.out.println("Marks Student" + i+1 "Total marks " +sum[i]);
+	        	  avg[i]=sum[i]/3;
+	        	  System.out.println(i+1 + " Average marks " +avg[i]);
+	        	  
+	          }
+	          
+	          //total and average scored in each subject
+	          sum[0]=s1[0]+s1[1]+s1[2];
+	          avg[0]=sum[0]/3;
+	          
+	          System.out.println(" Total marks of subject 1 " +sum[0]);
+	          
+	          System.out.println(" Average marks of subject 1 " +avg[0]);
+	          
+	          sum[1]=s2[0]+s2[1]+s2[2];
+	          avg[1]=sum[1]/3;
+	          
+	          System.out.println(" Total marks of subject 2 " +sum[1]);
+	          
+	          System.out.println(" Average marks of subject 2 " +avg[1]);
+	          
+	          sum[2]=s3[0]+s3[1]+s3[2];
+	          avg[2]=sum[2]/3;
+	          
+	          System.out.println(" Total marks of subject 3 " +sum[2]);
+	          
+	          System.out.println(" Average marks of subject 3 " +avg[2]);
+	          
+	          
+	    }
+}
+
+
+
+
+import java.util.Scanner;
+
+public class SimpleAndCompound {
+
+	public static void main(String[] args) {
+		
+		 float a;
+         double t;
+         float r;
+         double simpleinterest,compoundinterest;
+         
+         
+         Scanner c=new Scanner(System.in);
+         System.out.println("Enter the value of p");
+         a=c.nextFloat();
+         System.out.println("Enter the value of r");
+         r=c.nextFloat();
+         System.out.println("Enter the value of t");
+         t=c.nextDouble();
+         
+         simpleinterest=(a*t*r)/100;
+         System.out.println("The simple interest is" + simpleinterest);
+         
+         compoundinterest=a*Math.pow(1.0+r/100.0,t)-a;
+         System.out.println("The compound interest is"+ compoundinterest);
+	}
+
+}
