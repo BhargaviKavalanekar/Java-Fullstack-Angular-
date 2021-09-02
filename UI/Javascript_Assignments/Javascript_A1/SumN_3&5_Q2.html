@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Sum of N 3,5 multiples</title>
+    </head>
+    <body>
+        <script>
+            var number = 17
+
+            var sum = 0;
+            document.write('The sum of natural numbers for n = ',number,' : ');
+            for (i = 1; i <= number; i++) {
+                sum += i;
+                if(sum % 3 == 0 || sum % 5 == 0)
+                    document.write(sum," ");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Alternate arrays</title>
+    </head>
+    <body>
+        <script>
+            var array1 = prompt("Enter String no1 with space");
+            array1 = array1.split(" "); 
+            document.writeln("Array1: ",array1.toString(),"<br>");
+            var array2 = prompt("Enter String no2 with space");
+            array2 = array2.split(" "); 
+            document.writeln("Array2: ",array2.toString(),"<br>");
+            var newarr = concat(array1,array2);
+            document.writeln("Merged array: ",newarr.toString());
+            
+            function concat(a,b){
+                return a.concat(b);
+            }
+        </script>
+    </body>
+</html>
